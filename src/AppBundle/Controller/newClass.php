@@ -16,16 +16,16 @@ use Symfony\Component\HttpFoundation\Response;
 class newClass extends Controller
 {
     /**
-     * @Route("/new/{newName}")
+     * @Route("/")
      */
-    public function showAction($newName)
+    public function showAction()
     {
         $notes = [
             'Mano nauja klase yra labai paprasta',
             'Visa tai yra tik mokomasis sablonas'
         ];
         return $this->render('new/show.html.twig', [
-            'name' => $newName,
+            //'name' => $newName,
             'notes' => $notes
         ]);
 

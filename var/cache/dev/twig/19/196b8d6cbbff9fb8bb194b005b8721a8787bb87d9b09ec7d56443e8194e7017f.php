@@ -15,11 +15,11 @@ class __TwigTemplate_c42175665d921f32beeead62c00d116f1fd797c583f5e19405b73637c92
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7f67015e0c5a9a98175431c45f1773f4bb79dea145d84ded9f3d670f55a6e86c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7f67015e0c5a9a98175431c45f1773f4bb79dea145d84ded9f3d670f55a6e86c->enter($__internal_7f67015e0c5a9a98175431c45f1773f4bb79dea145d84ded9f3d670f55a6e86c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/symfony.svg"));
+        $__internal_51ce24edee678d0657dffef903a2ff2ce644ebb6efa9b6a0fb126a5bacf2ad73 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_51ce24edee678d0657dffef903a2ff2ce644ebb6efa9b6a0fb126a5bacf2ad73->enter($__internal_51ce24edee678d0657dffef903a2ff2ce644ebb6efa9b6a0fb126a5bacf2ad73_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/symfony.svg"));
 
-        $__internal_099f33f5ade1503e8d393890c88448eb0f2dbefc7dc1baa31a102b0a2627c1db = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_099f33f5ade1503e8d393890c88448eb0f2dbefc7dc1baa31a102b0a2627c1db->enter($__internal_099f33f5ade1503e8d393890c88448eb0f2dbefc7dc1baa31a102b0a2627c1db_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/symfony.svg"));
+        $__internal_261900fcfcf212456f42cd91901e819ff5ef94fa135c60e24806f59845a7f3c6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_261900fcfcf212456f42cd91901e819ff5ef94fa135c60e24806f59845a7f3c6->enter($__internal_261900fcfcf212456f42cd91901e819ff5ef94fa135c60e24806f59845a7f3c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/symfony.svg"));
 
         // line 1
         echo "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"182\" height=\"62\" viewBox=\"45 19 200 80\">
@@ -31,10 +31,10 @@ class __TwigTemplate_c42175665d921f32beeead62c00d116f1fd797c583f5e19405b73637c92
 </svg>
 ";
         
-        $__internal_7f67015e0c5a9a98175431c45f1773f4bb79dea145d84ded9f3d670f55a6e86c->leave($__internal_7f67015e0c5a9a98175431c45f1773f4bb79dea145d84ded9f3d670f55a6e86c_prof);
+        $__internal_51ce24edee678d0657dffef903a2ff2ce644ebb6efa9b6a0fb126a5bacf2ad73->leave($__internal_51ce24edee678d0657dffef903a2ff2ce644ebb6efa9b6a0fb126a5bacf2ad73_prof);
 
         
-        $__internal_099f33f5ade1503e8d393890c88448eb0f2dbefc7dc1baa31a102b0a2627c1db->leave($__internal_099f33f5ade1503e8d393890c88448eb0f2dbefc7dc1baa31a102b0a2627c1db_prof);
+        $__internal_261900fcfcf212456f42cd91901e819ff5ef94fa135c60e24806f59845a7f3c6->leave($__internal_261900fcfcf212456f42cd91901e819ff5ef94fa135c60e24806f59845a7f3c6_prof);
 
     }
 
@@ -65,6 +65,6 @@ class __TwigTemplate_c42175665d921f32beeead62c00d116f1fd797c583f5e19405b73637c92
     <path d=\"M209.92 51.2c5.65 0 9.43 4.08 9.43 9.72 0 5.3-3.86 9.7-9.43 9.7-5.6 0-9.46-4.4-9.46-9.7 0-5.64 3.8-9.72 9.46-9.72zm0 16.67c4 0 5.8-3.64 5.8-6.95 0-3.53-2.16-6.95-5.8-6.95-3.67 0-5.82 3.42-5.82 6.95 0 3.3 1.78 6.95 5.82 6.95zM200 52.93v-1.3h-4.92v-1.76c0-2.5.37-4.4 3.3-4.4H198.6c.8.06 1.5-.6 1.54-1.43l.06-1.12c-.7-.1-1.42-.22-2.3-.22-5.05 0-6.22 2.95-6.22 7.46v1.48h-4.36v1.44c.1.75.75 1.32 1.53 1.32h2.83v15.8h1.9c.77 0 1.42-.6 1.52-1.35V54.4h3.42c.8-.02 1.46-.67 1.5-1.47zM154.44 51.64h-.02c-.72 0-1.42.5-1.73 1.17L148 67h-.08l-4.6-14.2c-.3-.66-1-1.16-1.74-1.16h-2.4l6.3 17.32c.2.62.65 1.56.65 1.97 0 .36-1.02 4.57-4.07 4.57h-.23c-.78-.05-1.37.5-1.5 1.34l-.1 1.18c.62.1 1.25.25 2.34.25 4.5 0 5.85-4.1 7.13-7.67l6.84-18.96h-2.1zM132.7 55.4c-2.83-1.44-5.92-2.42-5.98-5.33 0-3.1 2.85-3.9 5.04-3.9h.02c.95 0 1.7.1 2.45.26h.02c.78.05 1.44-.57 1.54-1.34l.05-1.13c-1.44-.35-2.94-.54-4.24-.54-4.74.03-8.28 2.43-8.3 7 .02 3.98 2.7 5.53 5.6 6.93 2.84 1.36 5.95 2.5 5.98 5.78-.02 3.44-3.34 4.7-5.62 4.72-1.34 0-2.8-.34-4-.73-.78-.13-1.4.55-1.5 1.45l-.1 1c1.67.54 3.4 1 5.13 1 5.34-.03 9.47-2.15 9.5-7.67-.02-4.24-2.73-6.03-5.6-7.5zM184.43 70.2c.74 0 1.35-.53 1.5-1.22V58.3c0-4.04-1.7-7.1-6.43-7.1-1.68 0-4.48.95-5.75 3.6-.98-2.5-3.13-3.6-5.27-3.6-2.73 0-4.6.98-5.9 3.13h-.07v-1.15c0-.85-.7-1.54-1.54-1.54h-1.66V70.2h1.86c.86 0 1.55-.7 1.55-1.56 0-.02.02-.03.03-.05v-7.75c0-3.46 1.38-6.88 4.87-6.88 2.77 0 3.3 2.87 3.3 5.16V70.2h1.9c.8 0 1.46-.63 1.53-1.42v-7.93c0-3.46 1.4-6.88 4.88-6.88 2.77 0 3.32 2.87 3.32 5.16V70.2h1.9zM237.28 70.2c.84 0 1.5-.67 1.55-1.5v-9.53c0-4.98-2.15-7.97-6.96-7.97-2.57 0-5.05 1.28-6.07 3.4h-.07v-1.4c0-.86-.7-1.56-1.55-1.56h-1.77V70.2h1.9c.8 0 1.47-.64 1.54-1.44V61.6c0-4.5 1.75-7.63 5.64-7.63 2.98.18 3.93 2.3 3.93 6.62v9.6h1.88zM255.7 51.64h-.02c-.73 0-1.43.5-1.73 1.17l-4.7 14.2h-.08l-4.6-14.2c-.3-.66-1-1.16-1.73-1.16h-2.4l6.3 17.32c.2.62.65 1.56.65 1.97 0 .36-1.03 4.57-4.1 4.57h-.22c-.77-.05-1.36.5-1.5 1.34l-.1 1.18c.63.1 1.25.25 2.34.25 4.52 0 5.86-4.1 7.13-7.67l6.84-18.96h-2.1z\"/>
   </g>
 </svg>
-", "@Twig/symfony.svg", "/home/edvinas/demo_project/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/symfony.svg");
+", "@Twig/symfony.svg", "/home/edvinas/PhpstormProjects/JellyTofuFish.github.io/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/symfony.svg");
     }
 }
