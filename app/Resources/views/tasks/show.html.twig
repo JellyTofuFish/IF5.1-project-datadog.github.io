@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Task</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ task.id }}</td>
+            </tr>
+            <tr>
+                <th>Task name</th>
+                <td>{{ task.taskname }}</td>
+            </tr>
+            <tr>
+                <th>Comment about task</th>
+                <td>{{ task.taskcomment }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td><a href="{{ path('members_show', {'id': author.id }) }}">{{ author.username }}</a></td>
+            </tr>
+            <tr>
+                <th>Priority</th>
+                <td>{{ task.priority }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if task.created %}{{ task.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Due to</th>
+                <td>{% if task.dueto %}{{ task.dueto|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ task.status }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td><a href="{{ path('category_show', { 'id': category.id, 'ida' : team.id  }) }}">{{ category.categoryname }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="{{ path('tasks_index', { 'id': team.id }) }}">
+        <input type="submit" value="Return to project view" />
+    </form>
+
+    <form action="{{ path('tasks_edit', { 'id': task.id }) }}">
+        <input type="submit" value="Edit" />
+    </form>
+
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<head><meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <h1>Category</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ category.id }}</td>
+            </tr>
+            <tr>
+                <th>Category name</th>
+                <td>{{ category.categoryname }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if category.created %}{{ category.created|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Category's tasks</th>
+                <th>Task name</th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <th></th>
+                <td>{{ task.taskname }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="row">
+         <div class="col-sm-1"><form action="{{ path('categories_index', { 'id' : team.id }) }}">
+                 <input type="submit" value="Back" />
+             </form></div>
+        <div class="col-sm-1"  style="text-align: right"> <form action="{{ path('categories_edit', { 'id': category.id }) }}">
+                <input type="submit" value="Edit" />
+            </form></div>
+        <div class="col-sm-1"><span class="pull-right"> {{ form_start(delete_form) }}
+            <input type="submit" value="Delete" align="left">
+            {{ form_end(delete_form) }}</span></div>
+    </div>
+
+{% endblock %}

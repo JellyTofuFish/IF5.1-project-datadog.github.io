@@ -1,0 +1,299 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * Users
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UsersRepository")
+ * @UniqueEntity(fields="email", message="Email is already taken")
+ * @UniqueEntity(fields="username", message="Username is already taken")
+ */
+class Users implements UserInterface
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=50, unique=true, nullable=false)
+     * @Assert\NotBlank()
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     * @Assert\NotBlank()
+     */
+    private $name;
+
+    /**
+     * @var string
+     * @ORM\Column(name="lastname", type="string", length=50)
+     */
+    private $lastname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, unique=true, nullable=false)
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(name="role", type="string", length=50)
+     */
+    protected $role;
+
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=64)
+     */
+    private $password;
+
+    /**
+     * One User has Many Tasks
+     * @ORM\OneToMany(targetEntity="Tasks", mappedBy="author")
+     */
+    private $usertasks;
+
+    /**
+     * One User has Many UsersTeams
+     * @ORM\OneToMany(targetEntity="UsersTeams", mappedBy="user")
+     */
+    private $usersteamsUser;
+
+    public function __construct()
+    {
+        $this->usertasks = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->usersteamsUser = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return Users
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Users
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Users
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return Users
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function getRoles()
+    {
+       return [$this->getRole()];
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role = null)
+    {
+        $this->role = $role;
+    }
+
+    public function __toString()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsertasks()
+    {
+        return $this->usertasks;
+    }
+
+    /**
+     * @param mixed $usertasks
+     */
+    public function setUsertasks($usertasks)
+    {
+        $this->usertasks = $usertasks;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsersteamsUser()
+    {
+        return $this->usersteamsUser;
+    }
+
+    /**
+     * @param mixed $usersteamsUser
+     */
+    public function setUsersteamsUser($usersteamsUser)
+    {
+        $this->usersteamsUser = $usersteamsUser;
+    }
+
+
+
+}

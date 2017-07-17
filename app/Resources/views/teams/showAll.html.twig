@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('homepageUser', { 'id': app.user.id }) }}">Todo List</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="{{ path('homepageUser', { 'id': app.user.id }) }}">Profile</a> </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teams <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('teams_new', { 'id': app.user.id }) }}">Create a new team</a></li>
+                        <li class="active"><a href="{{ path('teams_show_all', { 'id': app.user.id }) }}">My teams</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('teams_index')}}">List of all teams</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ path('teams_project', { 'id': app.user.id }) }}">Tasks</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block body %}
+    <h2 style="margin-left: 30px">List of my teams</h2>
+    <div class="boxFullWindow">
+        <div class="divFullWindow">
+            <div class="overflowFullWindow">
+                <table>
+                    <thead>
+                    <tr class="tablecontent">
+                        <th class="tablecontent">Team name</th>
+                        <th class="tablecontent2">Detail</th>
+                    <tbody>
+                    {% for team in userteams %}
+
+                        <tr>
+                            <td class="tablecontent">{{ team.teamname }}</td>
+                            <td class="tablecontent2">
+                                <a class="btn btn-info btn-sm" href="{{ path('teams_show_one', { 'id' : team.uit, 'ida' : team.id}) }}">info</a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('homepage') }}" class="teamButton btn btn-lg btn-info">Back to the homepage</a>
+
+{% endblock %}

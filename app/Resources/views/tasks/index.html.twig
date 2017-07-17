@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+
+    <nav class="navbar navbar-inverse" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('tasks_index', { 'id': team.id }) }}">Todo List</a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a>{{ team.teamname }}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="{{ path('homepageUser', { 'id': app.user.id }) }}">Profile</a> </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teams<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('teams_new', { 'id': app.user.id }) }}">Create a new team</a></li>
+                        <li><a href="{{ path('teams_show_all', { 'id': app.user.id }) }}">My teams</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('teams_index')}}">List of all teams</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="{{ path('tasks_index', { 'id': team.id }) }}">Return to project view</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('categories_index', { 'id': team.id }) }}">Categories</a></li>
+                        <li><a href="{{ path('tasks_new', { 'id': team.id}) }}">Create a new task</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('members_show', { 'id': app.user.id }) }}">My tasks</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block body %}
+
+    {% if categories is empty %}
+        <p class="noteams">Welcome to the projects overview page! </p>
+        <br style="margin-bottom: 100px">
+        <p class="noteams">Start building your project by adding a new category</p>
+        <center><a href="{{ path('categories_new', { 'id': team.id }) }}" class="btn btn-info btn-lg" >Make a new category</a></center>
+        <br>
+        <p class="noteams">Or navigate by using the button at the top right corner</p>
+
+    {% else %}
+<div class="TasksBox">
+
+    {% for category in categories %}
+    <div class="TasksField">
+
+        <h2 class="Tasksh2"><a style="color: white" href="{{ path('category_show', { 'id': category.id, 'ida' : team.id  }) }}">{{ category.categoryname }}</a></h2>
+        {% for task in tasks %}
+            <table>
+
+        {% if task.categoryname == category.categoryname %}
+            <tbody class="TasksTaskBox">
+
+            <tr>
+                <th class="TasksTask1">Task name: </th>
+                <td class="TasksTask2">{{ task.taskname }}</td>
+                <td class="TasksTask3"> </td>
+            </tr>
+            <tr>
+                <th class="TasksTask1">Author:</th>
+                <td class="TasksTask2">{{ task.username }}</td>
+
+                {% if task.status == "Active" %}
+                    <td class="TasksTask3 TasksColorGreen">Active</td>
+                {% elseif task.status == "Ideal" %}
+                    <td class="TasksTask3 TasksColorGrey">Ideal </td>
+                {% elseif task.status == "Stopped" %}
+                    <td class="TasksTask3 TasksColorRed">Stopped</td>
+                {% elseif task.status == "Done" %}
+                    <td class="TasksTask3 TasksColorBlue">Done</td>
+                {% endif %}
+
+            </tr>
+            <tr class="TasksMargin">
+                <th class="TasksTask1">Due to</th>
+                <td class="TasksTask2">{% if task.dueto %}{{ task.dueto|date('Y-m-d') }}{% endif %}</td>
+                <td class="TasksTask3"><a class="btn btn-info btn-xs" style="width: 60px" href="{{ path('tasks_edit', { 'id': task.id }) }}">Edit</a></td>
+            </tr>
+            <tr class="TasksPadding">
+                <th class="TasksTask1">Priority:</th>
+                {% if task.priorities == "High" %}
+                    <td class="TasksTask2 TasksPrioriryHigh">{{ task.priorities }}</td>
+                {% elseif task.priorities == "Medium" %}
+                    <td class="TasksTask2 TasksPrioriryMedium">{{ task.priorities }}</td>
+                {% elseif task.priorities == "Low" %}
+                    <td class="TasksTask2 TasksPrioriryLow">{{ task.priorities }}</td>
+                {% endif %}
+                <td class="TasksTask3"> </td>
+            </tr>
+            <tr >
+                <td class="TasksSpacing"></td>
+            </tr >
+            </tbody>
+
+            {% endif %}
+
+        </table>
+        {% endfor %}
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endif %}
+
+{% endblock %}

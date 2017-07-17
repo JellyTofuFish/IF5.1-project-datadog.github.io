@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('homepageUser', { 'id': app.user.id }) }}">Todo List</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="{{ path('homepageUser', { 'id': app.user.id }) }}">Profile</a> </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teams <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="{{ path('teams_new', { 'id': app.user.id }) }}">Create a new team</a></li>
+                        <li><a href="{{ path('teams_show_all', { 'id': app.user.id }) }}">My teams</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('teams_index')}}">List of all teams</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ path('teams_project', { 'id': app.user.id }) }}">Tasks</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block body %}
+    <h2>Team creation</h2>
+
+    {{ form_start(form) }}
+    <div class="teamButton">
+        {{ form_row(form.teamname) }}
+    </div>
+
+    {{ form_widget(form.Submit) }}
+    <a href="{{ path('homepage') }}" class=" btn btn-lg btn-info">Back to the homepage</a>
+
+    {{ form_end(form) }}
+
+{% endblock %}

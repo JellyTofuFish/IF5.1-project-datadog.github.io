@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('homepageUser', { 'id': app.user.id }) }}">Todo List</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="{{ path('homepageUser', { 'id': app.user.id }) }}">Profile</a> </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teams <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('teams_new', { 'id': app.user.id }) }}">Create a new team</a></li>
+                        <li><a href="{{ path('teams_show_all', { 'id': app.user.id  }) }}">My teams</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('teams_index')}}">List of all teams</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="{{ path('teams_project', { 'id': app.user.id }) }}">Tasks</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="box" >
+        <div class="div1 " style="background-color: #eeeeee; border: none">
+            <h2 class="divTitle">Profile info</h2>
+            <div style="background-color: #eeeeee">
+    {% for usr in user %}
+
+            <p class="divContent" >Username:</p>
+            <input type="text"
+                   id="_Username"
+                   class="divfield"
+                   name="_Username"
+                   value="{{ usr.username }}"
+                   disabled/>
+
+            <p class="divContent" >Name:</p>
+            <input type="text"
+                   id="_name"
+                   class="divfield"
+                   name="_name"
+                   value="{{ usr.name }}"
+                   disabled/>
+
+            <p class="divContent" >Last name:</p>
+            <input type="text"
+                   id="_lasname"
+                   class="divfield"
+                   name="_lasname"
+                   value="{{ usr.lastname }}"
+                   disabled/>
+
+            <p class="divContent" >Email:</p>
+            <input type="text"
+                   id="_email"
+                   class="divfield"
+                   name="_email"
+                   value="{{ usr.email }}"
+                   disabled/>
+        {% endfor %}
+           <p><a style="position: absolute; bottom: 80px; display: block; margin-left: 20px;" role="button" class="btn btn-info btn-lg" href="{{ path('members_edit', {'id': app.user.id}) }}">Edit profile info</a></p>
+            {% if app.user %}
+                <a style="position: absolute; bottom: 20px; display: block; margin-left: 20px;" role="button" class="btn btn-info btn-lg" href="{{ logout_path('main') }}">Logout</a>
+            {% endif %}
+                </div>
+        </div>
+        <div class="div2 " style="background-color: #eeeeee; border: none">
+            <h2 class="divTitle">My teams</h2>
+
+            {% if usersteams is empty %}
+                <p class="noteams">You currently have no teams</p>
+            {% else %}
+                <div class="divoverflow">
+                    <table>
+                        <thead>
+                        <tr class="tablecontent">
+                            <th class="tablecontent">Team name</th>
+                            <th class="tablecontent2">Details</th>
+                        </tr>
+                        <tbody>
+
+                        {% for team in usersteams %}
+
+                            <tr>
+                                <td class="tablecontent">{{ team.teamname }}</td>
+                                <td class="tablecontent2">
+                                    <a class="btn btn-info btn-sm" href="{{ path('teams_show_one', { 'id' : team.uit, 'ida' : team.id}) }}">info</a>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            {% endif %}
+        </div>
+
+        <div class="div3" style="background-color: #eeeeee; border: none">
+            <h2 class="divTitle">Recent tasks</h2>
+            {% if usertasks is empty %}
+                <p class="noteams">You currently have no tasks</p>
+
+            {% else %}
+                <div class="divoverflow">
+                    <table>
+                        <thead>
+                        <tr class="tablecontent">
+                            <th class="tablecontent">Task title</th>
+                            <th class="tablecontent2">Team name</th>
+                            <th class="tablecontent3">Details</th>
+                        </tr>
+                        <tbody>
+
+                        {% for task in usertasks %}
+
+                            <tr>
+                                <td class="tablecontent">{{ task.taskname }}</td>
+                                <td class="tablecontent">{{ task.teamname }}</td>
+                                <td class="tablecontent2">
+                                    <a class="btn btn-info btn-sm" href="{{ path('tasks_show', { 'id' : task.id}) }}">info</a>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            {% endif %}
+        </div>
+        <div class="clear"></div>
+    </div>
+
+{% endblock %}

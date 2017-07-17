@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('homepageUser', { 'id': app.user.id }) }}">Todo List</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="{{ path('homepageUser', { 'id': app.user.id }) }}">Profile</a> </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teams <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('teams_new', { 'id': app.user.id }) }}">Create a new team</a></li>
+                        <li><a href="{{ path('teams_show_all', { 'id': app.user.id }) }}">My teams</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('teams_index')}}">List of all teams</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ path('teams_project', { 'id': app.user.id }) }}">Tasks</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block body %}
+    <h2 style="margin-left: 30px">Information about the "{{ team.0 }}" team</h2>
+    <div class="boxOne">
+        <div class="divFullWindow">
+                <table>
+                    <thead>
+                    <tr class="tablecontent">
+                        <th class="tablecontent">Team name</th>
+                        <th class="tablecontent2">Member count</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="tablecontent">{{ team.0 }}</td>
+                            <td class="tablecontent2">{{ team.1 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    <h2 style="margin-left: 30px">Members on this team</h2>
+    <div class="boxHalf">
+        <div class="divFullWindow">
+            <div class="overflowFullWindow">
+                <table>
+                    <thead>
+                    <tr class="tablecontent">
+                        <th class="MemberDisplay">Username</th>
+                        <th class="MemberDisplay2">Email</th>
+                    </tr>
+                    </thead>
+                    {% for user in users %}
+                        <tbody>
+                        <tr>
+                            <td class="MemberDisplay">{{ user.username }}</td>
+                            <td class="MemberDisplay2">{{ user.email }}</td>
+                        </tr>
+                        </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Leave this team" style="margin: 20px; margin-left: 30px" class=" btn btn-lg btn-info" style="">
+    <a href="{{ path('homepage') }}" class="btn btn-lg btn-info">Back to the homepage</a>
+    {{ form_end(delete_form) }}
+
+
+{% endblock %}

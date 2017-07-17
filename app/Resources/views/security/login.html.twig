@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Todo List</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="userlogin">
+            <form class="navbar-form navbar-right">
+                <a href="/login" role="button" class="btn btn-info disabled" style="width: 80px">Log in</a>
+                <a href="/register" role="button" class="btn btn-info" style="width: 80px">Sign up</a>
+            </form>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form class="form-signin" action="{{ path("login") }}" method="POST">
+            <h2 class="form-signin-heading" >Sign in to TodoList</h2>
+
+            <label for="_username" >Username:</label>
+            <input type="text"
+                   id="_username"
+                   class="form-control"
+                   name="_username"
+                   value="{{ last_username }}"
+                   required
+                   autofocus/>
+
+            <label for="_password">Password:</label>
+            <input type="password"
+                   id="_password"
+                   class="form-control"
+                   name="_password"
+                   required/>
+
+            <button class="btn btn-lg btn-info btn-block" style="margin-top: 25px" type="submit">Sign in</button>
+        </form>
+
+        {% if error %}
+            <div style="text-align: center" class="comment">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+    </div>
+{% endblock %}

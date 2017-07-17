@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#panelPHP").click(function(){
+                $("#flipPHP").animate({width: 'toggle'});
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#panelSymfony").click(function(){
+                $("#flipSymfony").animate({width: 'toggle'});
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#panelComposer").click(function(){
+                $("#flipComposer").animate({width: 'toggle'});
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#panelXAMPP").click(function(){
+                $("#flipXAMPP").animate({width: 'toggle'});
+            });
+        });
+    </script>
+<style media="screen" type="text/css">
+
+    div.list-group a:hover { background-color: #5bc0de !important;
+                            color: white;}
+
+
+    #flipPHP, #flipSymfony, #flipComposer, #flipXAMPP {
+        float:left;
+        width:2000px;
+        display: none;
+    }
+
+
+</style>
+    <div class="jumbotron">
+        <div class="row">
+            <h1>About us</h1>
+            <br>
+                <div class="col-sm-4">
+                    <p>This Todo list offers not only calendars or todo lists, but also manages team tasks and show their progress. Besides that, there are task categories to choose from for a simple and quick form fill out and many other great features.</p>
+                    <p><a class="btn btn-info btn-lg" href="/register" role="button">Register here &raquo;</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <h2>Tools that we used</h2>
+                    <div class="list-group">
+                        <a  id="panelPHP" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div  class="d-flex w-100 justify-content-between ">
+                                <h3 class="mb-1">phpStorm</h3>
+                                <div id="flipPHP"><img src="https://d3nmt5vlzunoa1.cloudfront.net/phpstorm/files/2016/03/PhpStorm2016_1_splash.png" align="center" style="width:160px;height:100px;"></div>
+                            </div>
+                            <small>PhpStorm is perfect for working with Symfony, Drupal, WordPress, Zend Framework, Laravel, Magento, Joomla!, CakePHP, Yii, and other frameworks.</small>
+
+                        </a>
+                        <a  id="panelSymfony" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h3 class="mb-1">Symfony</h3>
+                                <div id="flipSymfony"><img src="https://symfony.com/images/v5/opengraph/symfony_logo_vertical.png?v=5" align="center" style="width:160px;height:160px;"></div>
+                            </div>
+                            <small>The leading PHP framework to create websites and web applications. Built on top of the Symfony Components. </small>
+                        </a>
+                        <a id="panelComposer" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div  class="d-flex w-100 justify-content-between">
+                                <h3 class="mb-1">Composer</h3>
+                                <div id="flipComposer"><img src="https://getcomposer.org/img/logo-composer-transparent.png" align="center" style="width:160px;height:160px;"></div>
+                            </div>
+                            <small>Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.</small>
+                        </a>
+                        <a id="panelXAMPP" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h3 class="mb-1">XAMPP</h3>
+                                <div id="flipXAMPP"><img src="http://www.lestarte.com/blog/wp-content/uploads/2007/12/xampp-objectdock.png" align="center" style="width:160px;height:160px;"></div>
+                            </div>
+                            <small>XAMPP is a completely free, easy to install Apache distribution containing MariaDB, PHP, and Perl. The XAMPP open source package has been set up to be incredibly easy to install and to use.</small>
+                        </a>
+                    </div>
+                </div>
+        </div>
+    </div>
+{% endblock %}

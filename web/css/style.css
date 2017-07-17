@@ -1,0 +1,366 @@
+.ContainerNew{
+    margin: 40px;
+    margin-bottom: 0;
+}
+.nav{
+    margin-bottom: 0;
+}
+.comment{
+    font-style: italic;
+    color: #868686;
+}
+.form-signin{
+    margin:  0 auto;
+    max-width: 450px;
+}
+.form-signin-heading {
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+div.boxOne{
+    margin: auto;
+    height: 85px;
+    width: 96%;
+}
+div.boxHalf{
+    margin: auto;
+    height: 50vh;
+    width: 96%;
+}
+div.boxFullWindow{
+    margin: auto;
+    height: 70vh;
+    width: 96%;
+}
+div.divFullWindow{
+    margin: auto;
+    background-color: #dfdfdf;
+    border: 2px solid lightgray;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 25px;
+}
+div.overflowFullWindow{
+    width: auto;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+div.box{
+    margin: auto;
+    height: 90vh;
+    width: 94%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+div.div1{
+    margin: auto;
+    float: left;
+    background-color: #dfdfdf;
+    border: 2px solid lightgray;
+    height: 100%;
+    width: 48%;
+}
+div.div2{
+    margin: auto;
+    float: right;
+    background-color: #dfdfdf;
+    border: 2px solid lightgray;
+    width: 48%;
+    height: 49%;
+    margin-bottom: 15px;
+}
+div.divoverflow{
+    width: auto;
+    height: 85%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+div.div3{
+    margin: auto;
+    float: right;
+    background-color: #dfdfdf;
+    border: 2px solid lightgray;
+    width: 48%;
+    height: 49%;
+}
+div.clear{
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+    font-size: 0pt;
+    margin-top: -1px;
+}
+h2.divTitle{
+    margin: 0px;
+    background-color: lightgray;
+    padding: 10px;
+    padding-left: 20px;
+}
+p.divContent{
+    font-size: 13pt;
+    margin-top: 30px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+}
+input.divfield{
+    font-size: 11pt;
+    width: 60%;
+    padding: 4px;
+    margin-left: 20px;
+}
+
+/* for chooseProject.html.twig*/
+
+tr.projectcontent{
+    border-bottom: 2px solid lightgray;
+}
+th.projectcontent{
+    border-bottom: 3px solid lightgray;
+    padding: 8px;
+    font-style: italic;
+    font-size: 14pt;
+    width: 40%;
+    text-align: center;
+}
+th.projectcontent2{
+    width: 20%;
+    font-size: 14pt;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px solid lightgray;
+}
+th.projectcontent3{
+    width: 40%;
+    font-size: 14pt;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px solid lightgray;
+}
+td.projectcontent{
+    border-bottom: 2px solid lightgray;
+    padding: 8px;
+    font-size: 13pt;
+    width: 40%;
+    text-align: center;
+}
+td.projectcontent2{
+    width: 20%;
+    text-align: center;
+    border-bottom: 2px solid lightgray;
+}
+td.projectcontent3{
+    width: 40%;
+    text-align: center;
+    border-bottom: 2px solid lightgray;
+}
+
+/*Default table field separation*/
+
+tr.tablecontent{
+    border-bottom: 2px solid lightgray;
+}
+th.tablecontent{
+    border-bottom: 3px solid lightgray;
+    padding: 8px;
+    font-style: italic;
+    font-size: 14pt;
+    width: 60%;
+    text-align: center;
+}
+th.tablecontent2{
+    width: 25%;
+    font-size: 14pt;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px solid lightgray;
+}
+th.tablecontent3{
+    width: 15%;
+    font-size: 14pt;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px solid lightgray;
+}
+td.tablecontent{
+    border-bottom: 2px solid lightgray;
+    padding: 8px;
+    font-size: 13pt;
+    width: 60%;
+    text-align: center;
+}
+td.tablecontent2{
+    width: 30%;
+    text-align: center;
+    border-bottom: 2px solid lightgray;
+}
+td.tablecontent3{
+    width: 15%;
+    text-align: center;
+    border-bottom: 2px solid lightgray;
+}
+
+th.MemberDisplay{
+    border-bottom: 3px solid lightgray;
+    padding: 8px;
+    font-style: italic;
+    font-size: 14pt;
+    width: 40%;
+    text-align: center;
+}
+th.MemberDisplay2{
+    width: 60%;
+    font-size: 14pt;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px solid lightgray;
+}
+td.MemberDisplay{
+    border-bottom: 2px solid lightgray;
+    padding: 8px;
+    font-size: 13pt;
+    width: 40%;
+    text-align: center;
+}
+td.MemberDisplay2{
+    width: 60%;
+    text-align: center;
+    border-bottom: 2px solid lightgray;
+}
+
+
+p.noteams{
+    text-align: center;
+    position: relative;
+    top: 35%;
+    font-size: 19pt;
+    font-style: italic;
+    color: darkgrey;
+}
+table{
+    margin: 0px;
+    width: 100%;
+}
+a.teamButton
+{
+    margin: 20px;
+    margin-left: 30px;
+}
+
+div.TasksBox
+{
+    margin-bottom: 0;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    width: 99.5%;
+    height: 88.6%;
+    white-space: nowrap;
+
+}
+div.TasksField
+{
+    background-color: white;
+    display: inline-block;
+    height: 100%;
+    width: 380px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+h2.Tasksh2
+{
+    margin: 0;
+    font-style: italic;
+    font-weight: bolder;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #999999;
+    margin-bottom: 20px;
+}
+td.TasksSpacing {
+    padding-top: 20px;
+    border-top: 2px solid #999999;
+}
+tbody.TasksTaskBox
+{
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+th.TasksTask1
+{
+    float: left;
+    padding-left: 15px;
+    width: 30%;
+}
+td.TasksTask2
+{
+    float: left;
+    padding-left: 10px;
+    width: 50%;
+}
+td.TasksTask3
+{
+    text-align: left;
+    float: left;
+    width: 20%;
+}
+td.TasksColorGreen {
+    font-size: 14px;
+    border: 1px solid chartreuse;
+    width: 60px;
+    text-align: center;
+    background-color: limegreen;
+    color: chartreuse;
+}
+td.TasksColorGrey
+{
+    font-size: 14px;
+    border: 1px solid #AAAAAA;
+    width: 60px;
+    text-align: center;
+    background-color:#807d7d;
+    color: #AAAAAA;
+}
+td.TasksColorRed
+{
+    font-size: 14px;
+    border: 1px solid #ff8b86;
+    width: 60px;
+    text-align: center;
+    background-color: #c81717;
+    color:#ff8b86
+}
+td.TasksColorBlue
+{
+    border: 1px solid #5bc0de;
+    font-size: 14px;
+    width: 60px;
+    text-align: center;
+    background-color: #218BC3;
+    color: #5bc0de;
+}
+td.TasksPrioriryHigh
+{
+    font-style: oblique;
+    font-weight: bold;
+}
+td.TasksPrioriryMedium
+{
+    font-style: oblique;
+    color: dimgray;
+}
+td.TasksPrioriryLow
+{
+    font-style: oblique;
+    color: darkgrey;
+}
+
+
